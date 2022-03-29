@@ -27,7 +27,9 @@
             imJs.contactForm();
             imJs.wowActive();
             imJs.awsActivation();
+            imJs.demoActive();
             imJs.activePopupDemo();
+            imJs.onePageNav();
             
         },
 
@@ -44,7 +46,14 @@
             })
         },
 
-       
+        demoActive: function (e) {
+            $('.rn-right-demo').on('click', function (e) {
+                $('.demo-modal-area').addClass('open');
+            })
+            $('.demo-close-btn').on('click', function (e) {
+                $('.demo-modal-area').removeClass('open');
+            })
+        },
 
         contactForm: function () {
             $('.rwt-dynamic-form').on('submit', function (e) {
@@ -409,6 +418,17 @@
 
         awsActivation:function(e){
             AOS.init();
+        },
+
+        onePageNav: function () {
+            $('.onepagenav').onePageNav({
+                currentClass: 'current',
+                changeHash: false,
+                scrollSpeed: 500,
+                scrollThreshold: 0.2,
+                filter: '',
+                easing: 'swing',
+            });
         },
 
     }
